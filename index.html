@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   <title>Kim Skin</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="pictures/logo-ks.png" alt="Your Dream House" width="110" heigth="110"></div>
+        <nav>
+            <ul id="menu" class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <hr>
+<h2 class="texto-principal">¿Quieres aprender a cuidar tu piel?</h2>
+<center>
+<table>
+    <tr>
+        <td><img src="pictures/img-skin.jpg" class="imagen-principal"></td> 
+         <td><img src="pictures/img-skin1.jpg" class="imagen-principal"></td>
+        <td><img src="pictures/img-skin2.jpg" class="imagen-principal"></td>
+       </tr>           
+         </table>        
+       <button class="btn-inicio"> <p class="texto-secundario"><a href="altas.html">¡Registrarme!</a></p> </button>   
+    </center>
+    <script>
+        const toggle = document.getElementById('toggle');
+        const menu = document.getElementById('menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+<footer>
+    <p>© 2024 SKIN PINK. Todos los derechos reservados.</p>
+</footer>
+</html>

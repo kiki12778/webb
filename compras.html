@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu, .cart {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1;
+   
+        }
+
+        .menu h2, .cart h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .product {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product img {
+            width: 100px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .cart-item button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cart-item button:hover {
+            background-color: #c82333;
+        }
+
+        .total {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+
+
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: #fff;
+  border-radius: 3px;
+  height: 100%;
+}
+
+.codepen-button .span {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  
+  gap: 10px;
+  position: absolute;
+}
+
+.codepen-button .p {
+  margin: 0;
+}
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.menu-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.images-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    margin: 10px;
+    text-align: center;
+}
+
+.image-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="pictures/logo-ks.png" alt="Your Dream House" width="110" heigth="110"></div>
+        <nav>
+            <ul id="menu" class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <link rel="stylesheet" href="style.css">
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <hr>
+ 
+    <div class="container">
+        <div class="menu-container">
+
+        
+        
+        <div class="menu">
+            <h2>Compras por realizar</h2>
+            <div class="product" data-id="1" data-price="10">
+                <img class="image" src="pictures/1im.jpg" alt="Protector solar" width="200" height="300">
+                <div>
+                 
+                    <h2 class="titles">Protector Solar</h2>
+                    <p class="description"> Crema Fluida Invisible Ultra Protección para Verano</p>
+                     <p class="description">$199</p>
+                    
+                </div>
+                <button onclick="addToCart(1, 'Protector Solar', 199, 'pictures/1im.jpg')">Agregar al Carrito</button>
+            </div>
+
+
+            <div class="product" data-id="2" data-price="15">
+                <img class="image" src="pictures/2im.jpg" alt="Serum Rostro" width="200" height="300">
+                <div>
+                   
+        <h2 class="titles">Serum Rostro</h2>
+        <p class="description">Hidrata intensamente y rellena líneas de expresión</p>
+         <p class="description">$200</p>
+                </div>
+                <button onclick="addToCart(2, 'Serum Rostro', 200, 'pictures/2im.png')">Agregar al Carrito</button>
+            </div>
+
+
+            <div class="product" data-id="3" data-price="20">
+                <img class="image" src="pictures/3im.jpg" alt="Gel Hidratante" width="200" height="300">
+                <div>
+                   
+                    <h2 class="titles">Gel Hidratante</h2>
+                    <p class="description">Hidrata intensamente y mejora la suavidad</p>
+                     <p class="description">$250</p>
+                </div>
+                <button onclick="addToCart(3, 'Gel Hidratante', 250, 'pictures/3.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="4" data-price="20">
+                <img class="image" src="pictures/4.jpg" alt="Crema facial con Péptidos" width="200" height="300">
+                <div>
+               
+                <h2 class="titles">Crema facial</h2>
+                <p class="description">Crema hidratante</p>
+                <p class="description">$223</p>
+                </div>
+
+            
+
+                <button onclick="addToCart(3, 'Crema facial', 223, '4.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="5" data-price="30">
+                <img class="image" src="pictures/5.jpg" alt="Pond's Crema Facial Anti-manchas" width="200" height="300">
+                <div>
+                    <h2 class="titles">Pond's Crema Facial Anti-manchas</h2>
+        <p class="description">Clarant B3 Piel Balanceada a Seca</p>
+         <p class="description">$165</p>
+                </div>
+
+                <button onclick="addToCart(5, 'Ponds Crema Facial Anti-manchas', 165, '5.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="6" data-price="35">
+                <img class="image" src="pictures/6.jpg" alt="Agua Micelar" width="200" height="300">
+                <div>
+                    
+                    <h2 class="titles">Agua Micelar</h2>
+                    <p class="description">Desmaquillante para Todo Tipo de Piel</p>
+                     <p class="description">$145</p>
+        
+                </div>
+                <button onclick="addToCart(6, 'Agua Micelar', 145, '6.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="7" data-price="40">
+                <img class="image" src="pictures/7.jpg" alt="Agua Micelar" width="200" height="300">
+                <div>
+                   
+        <h2 class="titles">Agua Micelar</h2>
+        <p class="description">Desmaquillante para Todo Tipo de Piel</p>
+         <p class="description">$145</p>
+                </div>
+                <button onclick="addToCart(7, 'Producto 7', 145, '7.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="8" data-price="45">
+                <img src="pictures/8.jpg" alt="Producto 8">
+                <div>
+                    <h3>Crema Ponds</h3>
+                    <p>$600.00</p>
+                </div>
+
+
+                <button onclick="addToCart(8, 'Crema Ponds', 600, '8.png')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="9" data-price="50">
+                <img src="pictures/9.webp" alt="Producto 9">
+                <div>
+                    <h3>Mascarilla Garnier</h3>
+                    <p>$80</p>
+                </div>
+
+
+                <button onclick="addToCart(9, 'Mascarilla Garnier', 80, 'pictures/9.webp')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="10" data-price="55">
+                <img src="pictures/10.webp" alt="Producto 10">
+                <div>
+                    <h3>Mascarilla</h3>
+                    <p>$90</p>
+                </div>
+
+
+                <button onclick="addToCart(10, 'Mascarilla', 90, '10.webp')">Agregar al Carrito</button>
+            </div>
+            <div class="product" data-id="11" data-price="60">
+                <img src="pictures/11.jpg" alt="Producto 11">
+                <div>
+                    <h3>Mascarilla colageno</h3>
+                    <p>$100</p>
+                </div>
+                <button onclick="addToCart(11, 'Mascarilla colageno', 100, '11.jpg')">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Carrito de Compras</h2>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="total" id="cart-total">Total: $0.00</div>
+        </div>
+    </div>
+
+    <script>
+        const cart = [];
+        const cartItemsElement = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+
+        function addToCart(id, name, price, image) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity += 1;
+            } else {
+                cart.push({ id, name, price, image, quantity: 1 });
+            }
+            updateCart();
+        }
+
+        function removeFromCart(id) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+             if (itemIndex !== -1) {
+                cart.splice(itemIndex, 1);
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            cartItemsElement.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>${item.quantity} x $${item.price.toFixed(2)}</p>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})">Eliminar</button>
+                `;
+                cartItemsElement.appendChild(itemElement);
+            });
+            cartTotalElement.innerText = `Total: $${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+<footer>
+    <p>© 2024 SKIN PINK. Todos los derechos reservados.</p>
+</footer>
+</html>

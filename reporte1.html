@@ -1,0 +1,35 @@
+<html>
+<head>
+   <title>Kim Skin</title>
+</head>    
+
+<body color="#eeade5">
+<h1>Reporte por listado</h1>    
+<?php        
+
+
+$conexion=mysqli_connect("localhost","root","") or die("Problemas en la conexion");
+ 
+mysqli_select_db($conexion,'contacto') or die("Problemas en la selección de la base de datos");
+
+$registros=mysqli_query($conexion,"SELECT id_, compra, cantidad, precio from alumno ORDER BY id_alumno") or
+  die("Problemas en el select:".mysqli_error());
+
+
+// comienza un bucle que leerá todos los registros existentes
+while($row = mysqli_fetch_array($registros)) {
+// $row es un array con todos los campos existentes en la tabla
+echo "<hr>";
+echo "Id_alumno".$row['id_alumno']."<br>";
+echo "Nombre: ".$row['compra']."<br>";
+echo "Dirección: ".$row['cantidad']."<br>";
+echo "Telefóno: ".$row['precio']."<br>";
+} // fin del bucle de instrucciones
+mysqli_free_result($registros); // Liberamos los registros
+mysqli_close($conexion); // Cerramos la conexion con la base de datos
+echo "<hr>";
+?>
+<br>
+<input type="button" onclick="history.back()" name="Regresar" value="Regresar">
+</body>
+</html>

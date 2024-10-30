@@ -1,0 +1,60 @@
+<html>
+<head>
+     <title>Kim Skin</title>
+</head>    
+
+<body bgcolor="#AFEEEE">
+<h1>Reporte por tabla</h1>    
+<?php        
+
+
+$conexion=mysqli_connect("localhost","root","") or die("Problemas en la conexion");
+ 
+mysqli_select_db($conexion,'contacto') or die("Problemas en la selección de la base de datos");
+
+$registros=mysqli_query($conexion,"SELECT Producto, Mascarilla, Cremas, Agua micelar, Parches from alumno ORDER BY id_alumno") or
+  die("Problemas en el select:".mysqli_error());
+
+
+echo '<table border="2" CELLSPACING=1 CELLPADDING=1>';
+echo '<tr>';
+echo '<th> Producto</th>';
+echo '<th> Mascarillas </th>';
+echo '<th> Cremas </th>';
+echo '<th> Agua micelar</th>';
+echo '</tr>Parches </th>';
+   
+
+
+//esta parte es opcional.
+//aqui solo extraemos el total de registros que nos devolvio nuestra consulta
+$totalregistros=mysqli_num_rows($registros);
+ //iniciamos el recorrido de nuestros registros
+while($row=mysqli_fetch_array($registros)){
+
+echo  '<tr>';
+echo  '<td>';
+echo $row['Producto'];
+echo '</td>';
+echo  '<td>';
+echo $row['Mascarillas'];
+echo '</td>';
+echo  '<td>';
+echo $row['Cremas'];
+echo '</td>';
+echo  '<td>';
+echo $row['Agua micelar'];
+echo '</td>';
+echo '</tr>';
+echo $row['Parches'];
+echo '</td>';
+echo '</tr>';
+
+       
+}
+ ?>
+</table>
+<br>
+<input type="button" onclick="history.back()" name="Regresar" value="Regresar">
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <title>Kim Skin</title>
+    
+</head>
+<header>
+    <div class="logo"><img src="pictures/logo-ks.png" alt="Your Dream House" width="110" heigth="110"></div>
+        <nav>
+            <ul id="menu" class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="altas.html">Registrarme</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<body>
+    <h2>Hacer cambios en mi registro</h2>
+    <form action="altas.php" method="post">
+        <label for="usuario">Usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="apellido_p">Apellido paterno:</label><br>
+        <input type="text" id="apellido_p" name="apellido_p" required><br><br>
+        
+        <label for="apellido_m">Apellido materno:</label><br>
+        <input type="text" id="apellido_m" name="apellido_m"><br><br>
+        
+        <label for="domicilio">Domicilio:</label><br>
+        <input type="text" id="domicilio" name="domicilio"><br><br>
+        
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" id="telefono" name="telefono"><br><br>
+        
+        <input type="submit" value="Hacer cambios">
+    </form>
+    <script>
+        const toggle = document.getElementById('toggle');
+        const menu = document.getElementById('menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+<footer>
+    <p>© 2024 Your Dream Home. Todos los derechos reservados.</p>
+</footer>
+</html>
